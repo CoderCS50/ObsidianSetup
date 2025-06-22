@@ -1,0 +1,35 @@
+.cm-cursor, .CodeMirror-cursor {
+  width: 2px;
+  background-color: rgb(255, 255, 255);
+  mix-blend-mode: difference;
+  border-radius: 5px;
+  
+  /* Enhanced glow effect for better visibility */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 
+    0 0 4px 1px rgba(255,255,255,1),
+    0 0 8px 2px rgba(255,255,255,0.8), 
+    0 0 12px 4px rgba(255,255,255,0.6),
+    0 0 16px 6px rgba(255,255,255,0.4);
+  
+  /* Ensure the cursor remains visible during blink animation */
+  animation: cursor-glow 1s ease-in-out infinite alternate;
+}
+
+/* Keyframe animation to maintain glow during blink */
+@keyframes cursor-glow {
+  0% {
+    box-shadow: 
+      0 0 4px 1px rgba(255,255,255,0.9),
+      0 0 8px 2px rgba(255,255,255,0.7), 
+      0 0 12px 4px rgba(255,255,255,0.5),
+      0 0 16px 6px rgba(255,255,255,0.3);
+  }
+  100% {
+    box-shadow: 
+      0 0 4px 1px rgba(255,255,255,1),
+      0 0 8px 2px rgba(255,255,255,0.8), 
+      0 0 12px 4px rgba(255,255,255,0.6),
+      0 0 16px 6px rgba(255,255,255,0.4);
+  }
+}
